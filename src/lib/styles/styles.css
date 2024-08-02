@@ -1,0 +1,120 @@
+@font-face {
+    font-family: "Termina Regular";
+    src: url(Termina-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Termina Bold";
+    src: url(Termina-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Termina Demi";
+    src: url(Termina-Demi.ttf);
+}
+
+:root {
+    /* Colors */
+    --primary: #2A69A8;
+    --dark: #1E1B1A;
+    --lite: #E9F0EE;
+
+    --pri-lite: #D3D8DE;
+    --pri-dark: #24292E;
+
+    --lite-less: #DAE0DF;
+    --lite-more: #EEF5F3;
+
+    --dark-less: #292523;
+    --dark-more: #1C1918;
+
+    --footer-lite: #88AACB;
+    --footer-dark: #37526D;
+
+    --txt-clr: var(--dark);
+    --less-clr: var(--lite-less);
+    --more-clr: var(--lite-more);
+    --bg-clr: linear-gradient(to top, var(--lite-more), var(--lite-less));
+    --bg-footer: var(--footer-lite);
+    --pri-more: var(--pri-lite);
+    --txt-neg: var(--lite);
+
+    /* Fonts */
+    --txt-nav-desktop: normal 400 1.5rem Termina, sans-serif;
+    --txt-hero-name: normal 700 clamp(1.9063rem, 0.2667rem + 6.9953vw, 6.5625rem) Termina, sans-serif;
+    --txt-hero-job: normal 400 clamp(0.875rem, 0.3908rem + 2.0657vw, 2.25rem) Termina, sans-serif;
+    --txt-hero-txt: normal 400 clamp(0.875rem, 0.6549rem + 0.939vw, 1.5rem) Termina, sans-serif;
+    --txt-nav: var(--txt-nav-desktop);
+    --txt-h1: #222;
+    --txt-h2: normal 700 clamp(1.5rem, 0.9718rem + 2.2535vw, 3rem) Termina, sans-serif;
+    --txt-h3: normal 600 clamp(1rem, 0.8239rem + 0.7512vw, 1.5rem) Termina, sans-serif;
+    --txt-cs-span: normal 400 clamp(0.75rem, 0.919rem + -0.1878vw, 0.875rem) Termina, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --txt-clr: var(--lite);
+        --less-clr: var(--dark-less);
+        --more-clr: var(--dark-more);
+        --bg-clr: linear-gradient(to top, var(--dark-more), var(--dark-less));
+        --bg-footer: var(--footer-dark);
+        --pri-more: var(--pri-dark);
+        --txt-neg: var(--dark);
+    }
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg-footer);
+    margin: 0;
+    padding: 0;
+    color: var(--txt-clr);
+    font-family: Termina Regular, sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+h2 {
+    font: var(--txt-h2);
+}
+
+h3 {
+    font: var(--txt-h3);
+    text-transform: uppercase;
+}
+
+p {
+    margin: 0;
+}
+section, #hero{
+    background: var(--bg-clr);
+}
+
+main section {
+    padding-block: 3rem;
+}
+
+header {
+    background-color: var(--more-clr);
+}
+
+.wrapper {
+    max-width: 1440px;
+    margin: auto;
+    container-type: inline-size;
+    container-name: wrapper;
+}
+
+@container wrapper (width < 1440px) {
+    .wrapper>h2, .wrapper>.cards, footer .content {
+        padding-inline: 2rem;
+    }
+}
+

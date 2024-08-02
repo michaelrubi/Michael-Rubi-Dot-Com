@@ -1,8 +1,6 @@
 <script lang="ts">
-
-  import Hero from "$lib/components/Hero.svelte";
-  import CaseStudies from "$lib/components/CaseStudies.svelte";
-
+import Hero from "$lib/components/Hero.svelte";
+import CaseStudies from "$lib/components/CaseStudies.svelte";
 </script>
 <Hero />
 <main>

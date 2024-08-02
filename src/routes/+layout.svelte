@@ -1,11 +1,9 @@
 <script lang="ts">
-    import type { LayoutData } from './$types';
-
-    export let data: LayoutData;
-    import logo from '$lib/img/logo.svg';
-    import '$lib/styles.css';
+    import logo from '$lib/img/logo/logo.svg';
+    import '$lib/styles/styles.css';
     import Nav from '$lib/components/Nav.svelte';
     import Footer from '$lib/components/Footer.svelte';
+
 </script>
 
 <svelte:head>
