@@ -23,4 +23,11 @@ const { icon }: Props = $props();
         height: 1.5rem;
         width: auto;
     }
+
+    @media (max-width: 730px) {
+        .icon {
+            height: 3rem;
+            height: clamp(3rem, 0.9718rem + 2.2535vw, 4rem);
+        }
+    }
 </style>

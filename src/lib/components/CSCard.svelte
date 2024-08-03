@@ -9,6 +9,7 @@ const { title = "Test", subTitle = "Test", id, animationData, url }: Props = $pr
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
 let anim: any;
 let animationContainer: HTMLDivElement;
+let width: number = $state(0);
 
 $effect(() => {
     anim = lottie.loadAnimation({
@@ -31,8 +32,14 @@ function leaveCard() {
     }
 }
 
+function checkWindowWidth() {
+    width = window.innerWidth;
+}
+
 </script>
 
+<svelte:window on:load={checkWindowWidth} on:resize={checkWindowWidth} />
+<!-- Write a script to auto play animation when in viewport for smaller screens -->
 
 <a class="card"  href={url}>
     <!-- svelte-ignore a11y_no_static_element_interactions -->

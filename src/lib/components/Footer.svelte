@@ -26,6 +26,7 @@ const links = [
   <div class="wrapper">
     <div class="content">
       <Logo fill="gradient"/>
+      <span><a href="#projects">Projects</a></span>
       <ul>
         {#each links as link}
           <Link {...link}/>
@@ -52,13 +53,17 @@ const links = [
 
   footer .content {
     display: flex;
+    flex-wrap: wrap;
     flex: auto;
     justify-content: space-between;
+    gap: 1rem;
   }
 
   :global(footer .content>a svg) {
     opacity: .16;
-    width: clamp(359px, 100% - 2rem, 1440px);
+    width: clamp(730px, 100% - 2rem, 1440px);
+    /* height: 100%; */
+    /* max-height: 100%; */
   }
 
   footer ul {
@@ -80,7 +85,6 @@ const links = [
 
   :global(footer a) {
     color: var(--txt-clr);
-    text-decoration: none;
     font-size: .75rem;
     display: flex;
     align-items: center;
@@ -88,6 +92,16 @@ const links = [
     line-height: 0;
     gap: 4px;
   }
+  
+  :global(footer ul a) {
+    text-decoration: none;
+  }
+
+  :global(footer span>a) {
+      font-size: 1.5rem;
+      text-decoration: underline;
+  }
+
 
   :global(footer a:hover) {
     color: var(--primary);
@@ -95,5 +109,39 @@ const links = [
 
   :global(footer a:hover svg), :global(footer a:focus svg) {
     fill: var(--primary) !important;
+  }
+
+  footer span {
+    display: none;
+  }
+
+  @media (max-width: 730px) {
+
+    footer .content {
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    :global(footer .content>a) {
+      width: 100%;
+    }
+    
+    :global(footer .content>a svg) {
+      height: auto;
+  }
+
+    footer ul {
+      justify-content: space-between;
+    }
+
+
+    :global(footer ul li:first-child, footer ul li:nth-child(2)) {
+      order: 1;
+    }
+
+    footer span {
+      display: block;
+    }
+    
   }
 </style>

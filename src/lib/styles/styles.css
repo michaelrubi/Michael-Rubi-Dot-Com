@@ -126,6 +126,7 @@ header {
 @container wrapper (width < 1440px) {
     .wrapper>h2, .wrapper>.cards, footer .content {
         padding-inline: 2rem;
+        padding-inline: clamp(0.5rem, -0.0282rem + 2.2535vw, 1rem);
     }
 }
 
