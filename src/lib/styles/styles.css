@@ -93,6 +93,17 @@ h3 {
 p {
     margin: 0;
 }
+
+a:hover {
+    color: var(--primary);
+    fill: var(--primary);
+}
+
+a:focus {
+    font-weight: 700;
+    color: var(--primary);
+    fill: var(--primary);
+}
 section, #hero{
     background: var(--bg-clr);
 }

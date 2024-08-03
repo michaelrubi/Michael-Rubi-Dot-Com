@@ -5,20 +5,24 @@
 </script>
 
 
-<button onclick={currentTheme.toggle}><Icon/></button>
+<button class:dark={currentTheme.dark} onclick={currentTheme.toggle}><Icon/></button>
 
 <style>
     button {
-        height: 3.5rem;
-        padding-left: 0.5rem;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5rem;
-        flex-shrink: 0;
-        padding-inline: 0.5rem;
-        border-radius: 2rem;
-        border: 4px solid var(--pri-more);
-        background: var(--dark-Less);
-        color: var(--txt-clr);
+      padding: 0 0 0 34px;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+      border-radius: 2rem;
+      border: 4px solid var(--pri-more);
+      background: var(--dark-less);
+      color: var(--txt-clr);
+      transition: padding 0.3s ease-in-out;
+    }
+    
+    button.dark {
+      padding: 0 34px 0 0;
+      background: var(--lite-less);
     }
 </style>

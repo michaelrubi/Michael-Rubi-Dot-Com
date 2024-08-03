@@ -8,5 +8,5 @@
 
 
 <li>
-    <a href={url}><Icon icon={icon} />{text}</a>
+    <a href={url} target="_blank"><Icon icon={icon} />{text}</a>
 </li>

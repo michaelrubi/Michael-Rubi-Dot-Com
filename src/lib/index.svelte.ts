@@ -1,6 +1,7 @@
 function theme() {
 	let dark = $state(false);
 	let animating = $state(false);
+	const timeout = 300;
 	if (typeof window !== "undefined") {
 		initialize();
 	}
@@ -46,7 +47,7 @@ function theme() {
 		if (iconElement) {
 			iconElement.style.animationDirection = dark ? "normal" : "reverse";
 
-			await new Promise((resolve) => setTimeout(resolve, 1000));
+			await new Promise((resolve) => setTimeout(resolve, timeout));
 
 			animating = false;
 		}
@@ -58,6 +59,9 @@ function theme() {
 		},
 		get animating() {
 			return animating;
+		},
+		get timeout() {
+			return timeout;
 		},
 		toggle,
 	};

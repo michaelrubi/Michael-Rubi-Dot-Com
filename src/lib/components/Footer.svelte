@@ -88,4 +88,12 @@ const links = [
     line-height: 0;
     gap: 4px;
   }
+
+  :global(footer a:hover) {
+    color: var(--primary);
+  }
+
+  :global(footer a:hover svg), :global(footer a:focus svg) {
+    fill: var(--primary) !important;
+  }
 </style>
