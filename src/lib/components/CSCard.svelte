@@ -9,7 +9,8 @@ const { title = "Test", subTitle = "Test", id, animationData, url }: Props = $pr
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
 let anim: any;
 let animationContainer: HTMLDivElement;
-let width: number = $state(0);
+
+let isTouchDevice = $state(false);
 
 $effect(() => {
     anim = lottie.loadAnimation({
@@ -17,33 +18,61 @@ $effect(() => {
         animationData,
         autoplay: false
     })
+
+    return () => {
+        if (anim) anim.destroy();
+    }
 });
 
-function enterCard() {
+$effect(() => {
+    if (!isTouchDevice || !animationContainer) return;
+    const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+            if (entry.isIntersecting) {
+                playAni();
+            } else {
+                stopAni();
+            }
+        }
+    });
+
+    observer.observe(animationContainer);
+
+    return () => observer.disconnect();
+})
+
+function checkTouch(state: boolean) {
+    if (isTouchDevice) return
+    isTouchDevice = state;
+}
+
+function playAni() {
     if (anim) {
         anim.play()
         anim.loop = true
     }
 }
 
-function leaveCard() {
+function pauseAni() {
     if (anim) {
         anim.loop = false
     }
 }
 
-function checkWindowWidth() {
-    width = window.innerWidth;
+function stopAni() {
+    if (anim) {
+        anim.stop();
+        anim.loop = false
+    }
 }
 
 </script>
 
-<svelte:window on:load={checkWindowWidth} on:resize={checkWindowWidth} />
-<!-- Write a script to auto play animation when in viewport for smaller screens -->
+<svelte:window ontouchstart={() => checkTouch(true)} onmousedown={() => checkTouch(false)}/>
 
 <a class="card"  href={url}>
     <!-- svelte-ignore a11y_no_static_element_interactions -->
-    <div class="animation" id={id} onmouseenter={enterCard} onmouseleave={leaveCard} bind:this={animationContainer}></div>
+    <div class="animation" id={id} onmouseenter={playAni} onmouseleave={pauseAni} bind:this={animationContainer}></div>
   <h3>{title}</h3>
     <span>{subTitle}</span>
 </a>
@@ -59,5 +88,4 @@ function checkWindowWidth() {
         width: 100%;
         aspect-ratio: 1/1;
     }
-
 </style>
