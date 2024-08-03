@@ -31,6 +31,7 @@ function theme() {
 			"--bg-footer": dark ? "var(--footer-lite)" : "var(--footer-dark)",
 			"--pri-more": dark ? "var(--pri-lite)" : "var(--pri-dark)",
 			"--txt-neg": dark ? "var(--lite)" : "var(--dark)",
+			"--hero-p-bg": dark ? "var(--p-bg-lite)" : "var(--p-bg-dark)",
 		};
 		for (const [key, value] of Object.entries(properties)) {
 			root.style.setProperty(key, value);

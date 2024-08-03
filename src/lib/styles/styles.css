@@ -31,6 +31,9 @@
     --footer-lite: #88AACB;
     --footer-dark: #37526D;
 
+    --p-bg-lite: #EEF5F380;
+    --p-bg-dark: #1E1B1A80;
+
     --txt-clr: var(--dark);
     --less-clr: var(--lite-less);
     --more-clr: var(--lite-more);
@@ -38,10 +41,14 @@
     --bg-footer: var(--footer-lite);
     --pri-more: var(--pri-lite);
     --txt-neg: var(--lite);
+    --hero-p-bg: var(--p-bg-lite);
+    --hero-shadow: 2px 2px 0 var(--p-bg-dark);
+    --txt-shadow: 1px 1px 0 var(--p-bg-dark);
 
     /* Fonts */
     --txt-nav-desktop: normal 400 1.5rem Termina, sans-serif;
     --txt-hero-name: normal 700 clamp(1.9063rem, 0.2667rem + 6.9953vw, 6.5625rem) Termina, sans-serif;
+    --txt-hero-name: normal 700 clamp(2.238rem, 0.2667rem + 6.9953vw, 6.5625rem) Termina, sans-serif;
     --txt-hero-job: normal 400 clamp(0.875rem, 0.3908rem + 2.0657vw, 2.25rem) Termina, sans-serif;
     --txt-hero-txt: normal 400 clamp(0.875rem, 0.6549rem + 0.939vw, 1.5rem) Termina, sans-serif;
     --txt-nav: var(--txt-nav-desktop);
@@ -60,6 +67,7 @@
         --bg-footer: var(--footer-dark);
         --pri-more: var(--pri-dark);
         --txt-neg: var(--dark);
+        --hero-p-bg: var(--p-bg-dark);
     }
 }
 
