@@ -1,6 +1,11 @@
 <script lang="ts">
 import Logo from "$lib/components/Logo.svelte";
 import DarkToggle from "./DarkToggle.svelte";
+import { page } from "$app/stores";
+
+function linkRoute(link: string) {
+  return $page.url.pathname === '/' ? `${link}` : `/${link}`;
+}
 
 let menuOpen = $state(false);
 
@@ -11,13 +16,13 @@ function toggleMenu() {
 
 <header>
   <div class="wrapper">
-    <Logo fill='solid'/>
+    <a href={linkRoute('#')}><Logo fill='solid'/></a>
     <button class="menu-toggle" class:open={menuOpen} onclick={toggleMenu} aria-label="Toggle menu">
       <span></span>
     </button>
     <nav class:open={menuOpen}>
       <ul>
-        <li><a href="#projects" onclick={toggleMenu}>Projects</a></li>
+        <li><a href={linkRoute('#projects')} onclick={toggleMenu}>Projects</a></li>
         <li><DarkToggle/></li>
       </ul>
     </nav>
@@ -158,7 +163,7 @@ function toggleMenu() {
       min-width: 100dvw;
       transform: translateX(-2rem);
       max-height: 0;
-      margin-top: .75rem;
+      /* margin-top: .75rem; */
       overflow: hidden;
       transition: max-height 0.8s ease;
     }
@@ -168,7 +173,7 @@ function toggleMenu() {
     }
 
     nav ul {
-      padding-top: 1rem;
+      padding-top: 1.75rem;
       flex-direction: column;
       align-items: center;
     }

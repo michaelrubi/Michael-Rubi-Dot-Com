@@ -17,7 +17,6 @@ $effect(() => {
 	};
 });
 </script>
-<a href="#">
 {#if fill == "solid"}
   {#if mobile}
     <svg
@@ -127,4 +126,3 @@ $effect(() => {
     </defs>
   </svg>
 {/if}
-</a>
