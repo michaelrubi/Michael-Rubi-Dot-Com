@@ -1,5 +1,5 @@
-// Michelangelo.js
-
+// Michelangelo.ts
+import type { CaseStudy } from '$lib/caseStudies';
 // Lottie
 import Creation from "$lib/lottie/creation.json";
 
@@ -17,7 +17,7 @@ import michIphoneM from "$lib/img/case-study/michelangelo/mockup/iphoneMerch.png
 import michIphone14M from "$lib/img/case-study/michelangelo/mockup/iPhone14MaxHome.png";
 import michMacMonitorM from "$lib/img/case-study/michelangelo/mockup/macMonitorMerch.png";
 
-export default {
+const michelangelo: CaseStudy = {
     slug: 'michelangelo',
     home: {
         title: 'Immersive Renaissance Experience',
@@ -107,3 +107,5 @@ export default {
         ]
     }
 }
+
+export default michelangelo;

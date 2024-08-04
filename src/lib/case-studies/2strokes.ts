@@ -1,4 +1,5 @@
-// strokes.js
+// strokes.ts
+import type { CaseStudy } from "$lib/caseStudies";
 // Lottie
 import Record from "$lib/lottie/record.json";
 
@@ -16,7 +17,7 @@ import strokesSurfaceMerchM from "$lib/img/case-study/strokes/mockup/surfaceProM
 import strokesSurfaceGameM from "$lib/img/case-study/strokes/mockup/surfaceStudioGame.png";
 
 
-export default {
+const strokes: CaseStudy = {
     slug: 'strokes',
     home: {
         title: "A Band Website You've Been Waiting For",
@@ -30,7 +31,7 @@ export default {
         alt: "Isometric view of iPhones with various album covers on the screens"
     }],
     background: "The Strokes, a renowned rock band with a dedicated fanbase, sought to revitalize their online presence and create a stronger connection with their fans. While unique, their existing website lacked functionality and didn't effectively showcase their music or merchandise. The band wanted a single-page website to capture their unique style and energy while providing a seamless user experience.",
-    problem: "Design a website that would serve as a central hub for fans to access the band's latest music, news, and merchandise. Promote the band's new releases and drive fan engagement. And incorporate interactive elements to make the website more fun and engaging.",
+    problem: ["Design a website that would serve as a central hub for fans to access the band's latest music, news, and merchandise. Promote the band's new releases and drive fan engagement. And incorporate interactive elements to make the website more fun and engaging."],
     process: {
         text: [
             {
@@ -101,3 +102,5 @@ export default {
         ]
     }
 }
+
+export default strokes;

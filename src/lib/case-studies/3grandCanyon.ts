@@ -1,4 +1,5 @@
-// grandCanyon.js
+// grandCanyon.ts
+import type { CaseStudy } from "$lib/caseStudies";
 // Lottie
 import Weather from "$lib/lottie/weather.json";
 
@@ -15,7 +16,8 @@ import gcPixelGameM from "$lib/img/case-study/grand-canyon/mockup/pixelFoldGame.
 import gcTabletInfoM from "$lib/img/case-study/grand-canyon/mockup/tabletInfo.png";
 import gcTabletWeatherM from "$lib/img/case-study/grand-canyon/mockup/tabletWeather.png";
 
-export default {
+
+const grandCanyon: CaseStudy = {
     slug: 'grand-canyon',
     home: {
         title: "Your Next Adventure Starts Here",
@@ -109,3 +111,5 @@ export default {
         ]
     }
 }
+
+export default grandCanyon;

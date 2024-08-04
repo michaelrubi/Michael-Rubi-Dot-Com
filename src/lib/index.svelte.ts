@@ -1,3 +1,8 @@
+/**
+ * Initializes and manages the theme of the application.
+ *
+ * @return {object} An object containing the theme's state and methods to toggle the theme.
+ */
 function theme() {
 	let dark = $state(false);
 	let animating = $state(false);
@@ -6,6 +11,11 @@ function theme() {
 		initialize();
 	}
 
+	/**
+	 * Initializes the theme of the application based on the user's preferred color scheme.
+	 *
+	 * @return {() => void} A function to remove the event listener when the component is destroyed.
+	 */
 	function initialize() {
 		const mediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
 		mediaQueryList.addEventListener("change", (e) => {
@@ -19,6 +29,15 @@ function theme() {
 		};
 	}
 
+	/**
+	 * Updates the CSS properties of the root element based on the current theme.
+	 *
+	 * This function retrieves the root element of the document and sets the CSS properties
+	 * for the different theme variables. The properties are determined based on the
+	 * current value of the `dark` variable.
+	 *
+	 * @return {void} This function does not return a value.
+	 */
 	function changeCSS() {
 		const root = document.documentElement;
 		const properties = {
@@ -37,7 +56,11 @@ function theme() {
 			root.style.setProperty(key, value);
 		}
 	}
-
+	/**
+	 * Toggles the theme of the application.
+	 *
+	 * @return {Promise<void>} A promise that resolves when the theme has been toggled.
+	 */
 	async function toggle() {
 		if (animating) return;
 		animating = true;

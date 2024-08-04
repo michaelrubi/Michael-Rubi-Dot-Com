@@ -11,7 +11,7 @@ const studies: CaseStudy[] = caseStudies
         <h2>Case Studies</h2>
         <div class="cards">
             {#each studies as study}
-                <CSCard title={study.home.title} subTitle={study.home.subTitle} animationData={study.home.lottie} url={`/case-study/${study.slug}`}/>
+                <CSCard title={study.home.title} subTitle={study.home.subTitle} animationData={study.home.lottie} url={`/case-study/${study.slug as string}`}/>
             {/each}
         </div>
     </div>

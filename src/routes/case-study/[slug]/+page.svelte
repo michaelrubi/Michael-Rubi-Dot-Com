@@ -4,7 +4,7 @@
     import {caseStudies, getAdjacentStudies, type CaseStudy} from "$lib/caseStudies";
     import { currentTheme } from "$lib/index.svelte"
 
-    const study: CaseStudy = $derived(caseStudies.find(s => s.slug === $page.params.slug));
+    const study = $derived(caseStudies.find(s => s.slug === $page.params.slug));
 
     const { previous, next } = getAdjacentStudies($page.params.slug);
 </script>
