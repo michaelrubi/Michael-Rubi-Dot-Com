@@ -13,6 +13,11 @@
     src: url(Termina-Demi.ttf);
 }
 
+@font-face {
+    font-family: "Termina Heavy";
+    src: url(Termina-Heavy.ttf);
+}
+
 :root {
     /* Colors */
     --primary: #2A69A8;
@@ -34,13 +39,16 @@
     --p-bg-lite: #EEF5F380;
     --p-bg-dark: #1E1B1A80;
 
+    --grad-dark: linear-gradient(to top, var(--dark-more) 33%, var(--dark));
+    --grad-lite: linear-gradient(to top, var(--lite-more) 33%, var(--lite));
+
     --txt-clr: var(--dark);
+    --txt-neg: var(--lite);
     --less-clr: var(--lite-less);
     --more-clr: var(--lite-more);
-    --bg-clr: linear-gradient(to top, var(--lite-more), var(--lite-less));
+    --bg-clr: var(--grad-lite);
     --bg-footer: var(--footer-lite);
     --pri-more: var(--pri-lite);
-    --txt-neg: var(--lite);
     --hero-p-bg: var(--p-bg-lite);
     --hero-shadow: 2px 2px 0 var(--p-bg-dark);
     --txt-shadow: 1px 1px 0 var(--p-bg-dark);
@@ -52,10 +60,11 @@
     --txt-hero-job: normal 400 clamp(0.875rem, 0.3908rem + 2.0657vw, 2.25rem) Termina, sans-serif;
     --txt-hero-txt: normal 400 clamp(0.875rem, 0.6549rem + 0.939vw, 1.5rem) Termina, sans-serif;
     --txt-nav: var(--txt-nav-desktop);
-    --txt-h1: #222;
+    --txt-h1: normal 800 clamp(1.75rem, 0.7817rem + 4.1315vw, 4.5rem) Termina, sans-serif; 
     --txt-h2: normal 700 clamp(1.5rem, 0.9718rem + 2.2535vw, 3rem) Termina, sans-serif;
     --txt-h3: normal 600 clamp(1rem, 0.8239rem + 0.7512vw, 1.5rem) Termina, sans-serif;
-    --txt-cs-span: normal 400 clamp(0.75rem, 0.919rem + -0.1878vw, 0.875rem) Termina, sans-serif;
+    --txt-cs-span: normal 400 clamp(1.25rem, 1.162rem + 0.3756vw, 1.5rem) Termina, sans-serif;
+    --txt-p: normal 400 clamp(1rem, 0.912rem + 0.3756vw, 1.25rem) Termina, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -63,7 +72,7 @@
         --txt-clr: var(--lite);
         --less-clr: var(--dark-less);
         --more-clr: var(--dark-more);
-        --bg-clr: linear-gradient(to top, var(--dark-more), var(--dark-less));
+        --bg-clr: var(--grad-dark);
         --bg-footer: var(--footer-dark);
         --pri-more: var(--pri-dark);
         --txt-neg: var(--dark);
@@ -86,6 +95,7 @@ h1, h2, h3 {
 }
 
 h1 {
+    font: var(--txt-h1);
     text-transform: uppercase;
 }
 
@@ -131,9 +141,8 @@ header {
     container-name: wrapper;
 }
 
-@container wrapper (width < 1440px) {
-    .wrapper>h2, .wrapper>.cards, footer .content {
-        padding-inline: 2rem;
+@media (width < 1472px) {
+    main section .wrapper, footer .content, article section:not(#csHero) .wrapper {
         padding-inline: clamp(0.5rem, -0.0282rem + 2.2535vw, 1rem);
     }
 }

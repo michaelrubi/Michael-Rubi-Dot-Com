@@ -44,9 +44,7 @@ function theme() {
 			"--txt-clr": dark ? "var(--dark)" : "var(--lite)",
 			"--less-clr": dark ? "var(--lite-less)" : "var(--dark-less)",
 			"--more-clr": dark ? "var(--lite-more)" : "var(--dark-more)",
-			"--bg-clr": dark
-				? "linear-gradient(to top, var(--lite), var(--lite-more))"
-				: "linear-gradient(to top, var(--dark-more), var(--dark-less))",
+			"--bg-clr": dark ? "var(--grad-lite)" : "var(--grad-dark)",
 			"--bg-footer": dark ? "var(--footer-lite)" : "var(--footer-dark)",
 			"--pri-more": dark ? "var(--pri-lite)" : "var(--pri-dark)",
 			"--txt-neg": dark ? "var(--lite)" : "var(--dark)",
