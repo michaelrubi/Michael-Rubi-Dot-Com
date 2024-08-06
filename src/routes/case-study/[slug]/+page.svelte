@@ -1,8 +1,8 @@
-<!-- [Slug].svelte -->
 <script lang="ts">
 import { page } from "$app/stores";
 import { caseStudies, getAdjacentStudies } from "$lib/caseStudies";
 import { currentTheme } from "$lib/index.svelte";
+import CSicon from "$lib/img/CSicon.svelte";
 
 let processes: HTMLDivElement;
 let processHeight: number = $state(0);
@@ -84,7 +84,7 @@ function processImageHeight() {
                 <div class="process-cards" bind:this={processes} style="--img-height: {processHeight}px">
                     {#each study.process.text as process}
                     <div class="process">
-                        <h3>{process.title}</h3>
+                        <h3>{#if process.icon}<CSicon icon={process.icon} />{/if}{process.title}</h3>
                         <p>{process.body}</p>
                     </div>
                     {/each}
@@ -104,7 +104,7 @@ function processImageHeight() {
                 <div class="results-cards">
                     {#each study.results.text as result}
                         <div class="result">
-                            <h3>{result.title}</h3>
+                            <h3>{#if result.icon}<CSicon icon={result.icon} />{/if}{result.title}</h3>
                             <p>{result.body}</p>
                         </div>
                     {/each}
@@ -189,6 +189,11 @@ function processImageHeight() {
     .processes .wrapper {
         container-type: inline-size;
         container-name: processes;
+    }
+
+    article h3 {
+        display: flex;
+        align-items: center;
     }
 
     .processes .images {

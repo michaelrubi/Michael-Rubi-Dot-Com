@@ -37,6 +37,7 @@ const michelangelo: CaseStudy = {
     process: {
         text: [
             {
+                icon: "palette",
                 title: "Immersion in Michelangelo's World",
                 body: "I delved deep into Michelangelo's artistic journey, studying his techniques, inspirations, and the cultural context of his era. This approach allowed me to create an authentic and informative experience for visitors."
             },
@@ -45,6 +46,7 @@ const michelangelo: CaseStudy = {
                 body: "I explored various interactive design concepts, including virtual tours, 3D models of sculptures, and augmented reality elements. After careful consideration, I opted for a minimalist design aesthetic to ensure Michelangelo's works remained the focal point."
             },
             {
+                icon: "ticketCart",
                 title: "Streamlined Shopping Experience",
                 body: "To simplify the user experience, I combined the ticketing and merchandise carts into one, making it easy for visitors to purchase tickets and souvenirs in a single transaction."
             }
@@ -71,6 +73,7 @@ const michelangelo: CaseStudy = {
     results: {
         text: [
         {
+            icon: "barGraph",
             title: "Ticket Sales Skyrocketed",
             body: "Ticket sales increased by over 400% in the first two weeks alone."
         },
@@ -79,6 +82,7 @@ const michelangelo: CaseStudy = {
             body: `The exhibit's interactive features, such as the immersive "walk-through" of the Sistine Chapel, garnered widespread acclaim and significantly increased user engagement.`
         },
         {
+            icon: "coins",
             title: "Revenue Generation",
             body: "The integrated merchandise store drove a substantial increase in revenue for the museum, further validating the project's effectiveness."
         }

@@ -56,7 +56,8 @@ const grandCanyon: CaseStudy = {
                 title: "API Integration",
                 body: "I ensured seamless integration with the National Parks API to provide up-to-date information and streamline content updates."
             },
-            {
+            {   
+                icon: "controller",
                 title: "Gamification",
                 body: "I designed an engaging memory-matching game that incorporated iconic images of the Grand Canyon, adding an element of fun and interactivity."
             }
@@ -79,6 +80,7 @@ const grandCanyon: CaseStudy = {
     results: {
         text: [
             {
+                icon: "barGraph",
                 title: "Increased Traffic",
                 body: "The website traffic increased by 25% within the first month of launch, indicating a heightened interest in the park."
             },
