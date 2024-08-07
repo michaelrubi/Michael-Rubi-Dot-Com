@@ -5,9 +5,12 @@
     import Footer from '$lib/components/Footer.svelte';
     import { currentTheme } from '$lib/index.svelte';
 
+
     $effect(() => {
         document.body.className = currentTheme.dark ? 'dark' : 'light';
     })
+
+    const { children } = $props();
 
 </script>
 
@@ -19,5 +22,5 @@
 </svelte:head>
 
 <Nav />
-<slot />
+{@render children()}
 <Footer />
