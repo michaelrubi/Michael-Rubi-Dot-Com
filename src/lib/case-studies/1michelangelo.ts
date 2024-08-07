@@ -13,7 +13,7 @@ import michMerchWF from "$lib/img/case-study/michelangelo/merch.jpg";
 
 import michIPadM from "$lib/img/case-study/michelangelo/mockup/iPadHero.png";
 import michMacM from "$lib/img/case-study/michelangelo/mockup/macStudioTickets.png";
-import michIphoneM from "$lib/img/case-study/michelangelo/mockup/iphoneMerch.png";
+import michIphoneM from "$lib/img/case-study/michelangelo/mockup/iPhoneMerch.png";
 import michIphone14M from "$lib/img/case-study/michelangelo/mockup/iPhone14MaxHome.png";
 import michMacMonitorM from "$lib/img/case-study/michelangelo/mockup/macMonitorMerch.png";
 
