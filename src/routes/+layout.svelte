@@ -1,9 +1,10 @@
 <script lang="ts">
     import logo from '$lib/img/logo/logo.svg';
-    import '$lib/styles/styles.css';
     import Nav from '$lib/components/Nav.svelte';
     import Footer from '$lib/components/Footer.svelte';
     import { currentTheme } from '$lib/index.svelte';
+    // import '../app.css';
+    import '$lib/styles/styles.css';
 
 
     $effect(() => {
@@ -24,7 +25,3 @@
 <Nav />
 {@render children()}
 <Footer />
-
-<style>
-    @import './src/lib/styles/styles.css';
-</style>

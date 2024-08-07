@@ -5,7 +5,8 @@ import { currentTheme } from "$lib/index.svelte";
 import CSicon from "$lib/img/CSicon.svelte";
 import TransSection from "$lib/components/TransSection.svelte";
 
-let processes: HTMLDivElement;
+// biome-ignore lint/style/useConst: <explanation>
+let processes: HTMLDivElement | undefined = $state(undefined);
 let processHeight: number = $state(0);
 
 const study = $derived(caseStudies.find((s) => s.slug === $page.params.slug));
@@ -16,6 +17,7 @@ function processImageHeight() {
 	const images = process?.images;
 	if (!images || images.length === 0) return;
 
+    if (!processes) return;
 	const containerWidth = processes.offsetWidth;
 	const gap = (images.length - 1) * 16;
 	const availableWidth = containerWidth - gap;

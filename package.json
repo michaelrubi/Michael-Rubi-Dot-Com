@@ -23,6 +23,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"firebase": "^10.12.5",
 		"fs": "^0.0.1-security",
 		"fs-extra": "^11.2.0",
 		"jszip": "^3.10.1"
