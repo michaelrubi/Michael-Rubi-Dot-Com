@@ -24,3 +24,7 @@
 <Nav />
 {@render children()}
 <Footer />
+
+<style>
+    @import './src/lib/styles/styles.css';
+</style>
