@@ -20,8 +20,3 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-
-#FB
-.firebaserc
-firebase.json
-/src/lib/firebase.ts

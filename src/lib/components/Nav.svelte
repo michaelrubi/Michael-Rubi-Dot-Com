@@ -22,7 +22,7 @@ function toggleMenu() {
     </button>
     <nav class:open={menuOpen}>
       <ul>
-        <li><a href={linkRoute('#projects')} onclick={toggleMenu}>Projects</a></li>
+        <li><a href={linkRoute('#projects')} onclick={toggleMenu}>Case Studies</a></li>
         <li><DarkToggle/></li>
       </ul>
     </nav>

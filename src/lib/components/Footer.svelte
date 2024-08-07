@@ -32,7 +32,7 @@ const links = [
   <div class="wrapper">
     <div class="content">
       <a href={linkRoute('#')}><Logo fill="gradient" /></a>
-      <span><a href={linkRoute('#projects')}>Projects</a></span>
+      <span><a href={linkRoute('#projects')}>Case Studies</a></span>
       <ul>
         {#each links as link}
           <Link {...link}/>
