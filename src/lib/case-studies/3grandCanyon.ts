@@ -28,12 +28,12 @@ const grandCanyon: CaseStudy = {
     subTitle: 'A Virtual Gateway to Adventure',
     hero: [
         {
-            src: gcHeroL,
-            alt: "Snowy Covered Grand Canyon"
-        },
-        {
             src: gcHeroD,
             alt: "Star lit Grand Canyon"
+        },
+        {
+            src: gcHeroL,
+            alt: "Snowy Covered Grand Canyon"
         }
     ],
     background: "The National Park Service (NPS) recognized the need to modernize the online presence of one of America's most iconic natural wonders, the Grand Canyon. While the existing website provided essential information, it lacked a distinct identity that would set it apart from other national park websites and the interactive elements necessary to engage a new generation of visitors. NPS sought to create a dynamic single-page website that would capture the grandeur and wonder of the Grand Canyon while providing practical information and promoting tourism.",

@@ -3,6 +3,11 @@
     import '$lib/styles/styles.css';
     import Nav from '$lib/components/Nav.svelte';
     import Footer from '$lib/components/Footer.svelte';
+    import { currentTheme } from '$lib/index.svelte';
+
+    $effect(() => {
+        document.body.className = currentTheme.dark ? 'dark' : 'light';
+    })
 
 </script>
 

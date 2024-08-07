@@ -63,73 +63,79 @@ function processImageHeight() {
                 {/if}
             </div>
         </section>
-        <TransSection newClass="bgProblem" >
-            <div class="background">
-                <h2>Background</h2>
-                <p>{study.background}</p>
-            </div>
-            <div class="problem">
-                <h2>Problem</h2>
-                {#each study.problem as problem}
-                    <p>{problem}</p>
-                {/each}
-            </div>
-        </TransSection>
+        {#key study.slug}
+            <TransSection newClass="bgProblem" >
+                <div class="background">
+                    <h2>Background</h2>
+                    <p>{study.background}</p>
+                </div>
+                <div class="problem">
+                    <h2>Problem</h2>
+                    {#each study.problem as problem}
+                        <p>{problem}</p>
+                    {/each}
+                </div>
+            </TransSection>
+        {/key}
             {#if study.process?.text}
-                <TransSection newClass="processes" >
-                    <h2>Process</h2>
-                    <div class="process-cards" bind:this={processes} style:--img-height={processHeight + 'px'}>
-                        {#each study.process.text as process}
-                        <div class="process">
-                            <h3>
-                                {#if process.icon}
-                                    {#if process.dimensions}
-                                    <CSicon icon={process.icon} dimensions={process.dimensions} />
-                                    {:else}
-                                        <CSicon icon={process.icon} />
+                {#key study.slug}
+                    <TransSection newClass="processes" >
+                        <h2>Process</h2>
+                        <div class="process-cards" bind:this={processes} style:--img-height={processHeight + 'px'}>
+                            {#each study.process.text as process}
+                            <div class="process">
+                                <h3>
+                                    {#if process.icon}
+                                        {#if process.dimensions}
+                                        <CSicon icon={process.icon} dimensions={process.dimensions} />
+                                        {:else}
+                                            <CSicon icon={process.icon} />
+                                        {/if}
                                     {/if}
-                                {/if}
-                                {process.title}
-                            </h3>
-                            <p>{process.body}</p>
+                                    {process.title}
+                                </h3>
+                                <p>{process.body}</p>
+                            </div>
+                            {/each}
                         </div>
+                        <div class="images">
+                            {#each study.process.images as image}
+                            <img src={image.src} alt={image.alt}>
+                            {/each}
+                        </div>
+                    </TransSection>
+                {/key}
+            {/if}
+        {#if study.results?.text}
+            {#key study.slug}
+                <TransSection newClass="results" >
+                    <h2>Results</h2>
+                    <div class="results-cards">
+                        {#each study.results.text as result}
+                            <div class="result">
+                                <h3>
+                                    {#if result.icon}
+                                        {#if result.dimensions}
+                                            <CSicon icon={result.icon} dimensions={result.dimensions} />
+                                        {:else}
+                                            <CSicon icon={result.icon} />
+                                        {/if}
+                                    {/if}
+                                    {result.title}
+                                </h3>
+                                <p>{result.body}</p>
+                            </div>
                         {/each}
                     </div>
                     <div class="images">
-                        {#each study.process.images as image}
-                        <img src={image.src} alt={image.alt}>
+                        {#each study.results.images as image}
+                            <div style:grid-column={image.span}>
+                                <img src={image.src} alt={image.alt}>
+                            </div>
                         {/each}
                     </div>
                 </TransSection>
-            {/if}
-        {#if study.results?.text}
-        <TransSection newClass="results" >
-            <h2>Results</h2>
-            <div class="results-cards">
-                {#each study.results.text as result}
-                    <div class="result">
-                        <h3>
-                            {#if result.icon}
-                                {#if result.dimensions}
-                                    <CSicon icon={result.icon} dimensions={result.dimensions} />
-                                {:else}
-                                    <CSicon icon={result.icon} />
-                                {/if}
-                            {/if}
-                            {result.title}
-                        </h3>
-                        <p>{result.body}</p>
-                    </div>
-                {/each}
-            </div>
-            <div class="images">
-                {#each study.results.images as image}
-                    <div style:grid-column={image.span}>
-                        <img src={image.src} alt={image.alt}>
-                    </div>
-                {/each}
-            </div>
-        </TransSection>
+            {/key}
         {/if}
     </article>
     <section class="navigation">

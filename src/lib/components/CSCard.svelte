@@ -72,6 +72,7 @@ function stopAni() {
 <a class="card"  href={url}>
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div class="animation"  onmouseenter={playAni} onmouseleave={pauseAni} bind:this={animationContainer}></div>
-  <h3>{title}</h3>
+    <h3>{title}</h3>
     <span>{subTitle}</span>
+    <span class="btn">view case</span>
 </a>

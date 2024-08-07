@@ -21,6 +21,7 @@ function theme() {
 		mediaQueryList.addEventListener("change", (e) => {
 			dark = e.matches;
 		});
+		dark = true;
 		changeCSS();
 		return () => {
 			mediaQueryList.removeEventListener("change", (e) => {
@@ -41,14 +42,14 @@ function theme() {
 	function changeCSS() {
 		const root = document.documentElement;
 		const properties = {
-			"--txt-clr": dark ? "var(--dark)" : "var(--lite)",
-			"--less-clr": dark ? "var(--lite-less)" : "var(--dark-less)",
-			"--more-clr": dark ? "var(--lite-more)" : "var(--dark-more)",
-			"--bg-clr": dark ? "var(--grad-lite)" : "var(--grad-dark)",
-			"--bg-footer": dark ? "var(--footer-lite)" : "var(--footer-dark)",
-			"--pri-more": dark ? "var(--pri-lite)" : "var(--pri-dark)",
-			"--txt-neg": dark ? "var(--lite)" : "var(--dark)",
-			"--hero-p-bg": dark ? "var(--p-bg-lite)" : "var(--p-bg-dark)",
+			"--txt-clr": !dark ? "var(--dark)" : "var(--lite)",
+			"--less-clr": !dark ? "var(--lite-less)" : "var(--dark-less)",
+			"--more-clr": !dark ? "var(--lite-more)" : "var(--dark-more)",
+			"--bg-clr": !dark ? "var(--grad-lite)" : "var(--grad-dark)",
+			"--bg-footer": !dark ? "var(--footer-lite)" : "var(--footer-dark)",
+			"--pri-more": !dark ? "var(--pri-lite)" : "var(--pri-dark)",
+			"--txt-neg": !dark ? "var(--lite)" : "var(--dark)",
+			"--hero-p-bg": !dark ? "var(--p-bg-lite)" : "var(--p-bg-dark)",
 		};
 		for (const [key, value] of Object.entries(properties)) {
 			root.style.setProperty(key, value);
