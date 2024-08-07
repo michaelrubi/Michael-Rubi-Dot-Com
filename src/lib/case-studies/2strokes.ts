@@ -4,7 +4,7 @@ import type { CaseStudy } from "$lib/caseStudies";
 import Record from "$lib/lottie/record.json";
 
 // Images
-import strokesHero from "$lib/img/case-study/strokes/mockup/iphoneGridRecords.png";
+import strokesHero from "$lib/img/case-study/strokes/mockup/iphoneGridRecords.jpg";
 
 import strokesTopWF from "$lib/img/case-study/strokes/strokesTop.jpg";
 import strokesMidWF from "$lib/img/case-study/strokes/strokesMid.jpg";
@@ -20,6 +20,8 @@ import strokesSurfaceGameM from "$lib/img/case-study/strokes/mockup/surfaceStudi
 const strokes: CaseStudy = {
     slug: 'strokes',
     home: {
+        color: "var(--lite)",
+        bg: "var(--p-bg-dark)",
         title: "A Band Website You've Been Waiting For",
         subTitle: "And It's About Time",
         lottie: Record
@@ -28,13 +30,15 @@ const strokes: CaseStudy = {
     subTitle: 'A Sonic Playground',
     hero: [{
         src: strokesHero,
-        alt: "Isometric view of iPhones with various album covers on the screens"
+        alt: "Isometric view of iPhones with various Strokes album covers on the screens"
     }],
     background: "The Strokes, a renowned rock band with a dedicated fanbase, sought to revitalize their online presence and create a stronger connection with their fans. While unique, their existing website lacked functionality and didn't effectively showcase their music or merchandise. The band wanted a single-page website to capture their unique style and energy while providing a seamless user experience.",
     problem: ["Design a website that would serve as a central hub for fans to access the band's latest music, news, and merchandise. Promote the band's new releases and drive fan engagement. And incorporate interactive elements to make the website more fun and engaging."],
     process: {
         text: [
             {
+                icon: "guitar",
+                dimensions: {x: 31, y: 32},
                 title: "Research",
                 body: "I conducted extensive research into the band's history, aesthetic, and target audience, as well as analyzed the websites of other successful bands to identify best practices."
             },
@@ -49,6 +53,8 @@ const strokes: CaseStudy = {
                 body: "I designed a visually appealing and easy-to-use merchandise store with a calculator function to assist with purchasing decisions."
             },
             {
+                icon: "bulb",
+                dimensions: {x: 8, y: 32},
                 title: "Accessibility",
                 body: "I implemented light/dark modes to cater to individual preferences and ensure accessibility for users with visual sensitivities."
             }
@@ -72,6 +78,7 @@ const strokes: CaseStudy = {
         text: [
             {
                 icon: "barGraph",
+                dimensions: { x: 34, y: 40 },
                 title: "Increased engagement",
                 body: "The interactive elements, particularly the guessing game, increased the average session duration by 30% and generated significant buzz on social media."
             },

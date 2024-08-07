@@ -1,6 +1,6 @@
 <script lang="ts">
-import { currentTheme } from "$lib/index.svelte";
-import { fade } from "svelte/transition";
+    import { currentTheme } from "$lib/index.svelte";
+    import { fade } from "svelte/transition";
 </script>
 
 <div class="mode-icon">
@@ -26,18 +26,3 @@ import { fade } from "svelte/transition";
     </svg>
     {/if}
 </div>
-
-<style>
-    .mode-icon {
-        width: 48px;
-        aspect-ratio: 1/1;
-        position: relative;
-        border-radius: 50%;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--bg);
-        color: var(--txt-clr);
-    }
-</style>

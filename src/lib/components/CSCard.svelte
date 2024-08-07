@@ -38,7 +38,7 @@ $effect(() => {
     observer.observe(animationContainer);
 
     return () => observer.disconnect();
-})
+});
 
 function checkTouch(state: boolean) {
     if (isTouchDevice) return
@@ -75,16 +75,3 @@ function stopAni() {
   <h3>{title}</h3>
     <span>{subTitle}</span>
 </a>
-
-<style>
-    .card {
-        cursor: pointer;
-        text-decoration: none;
-        color: var(--txt-clr);
-        display: grid;
-    }
-    .animation {
-        width: 100%;
-        aspect-ratio: 1/1;
-    }
-</style>

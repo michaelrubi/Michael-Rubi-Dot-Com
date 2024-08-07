@@ -45,19 +45,25 @@ const grandCanyon: CaseStudy = {
     process: {
         text: [
             {
+                icon: "sparkle",
                 title: "Brand Refresh",
                 body: "I designed a new logo that captured the essence of the Grand Canyon, incorporating elements of its unique geology and vibrant colors."
             },
             {
+                icon: "weather",
+                dimensions: { x: 35, y: 26 },
                 title: "Weather Theme",
                 body: "I developed a weather feature that provided real-time conditions and dynamically changed the website's theme to match the current weather, creating a more immersive experience for visitors."
             },
             {
+                icon: "link",
+                dimensions: { x: 27, y: 32 },
                 title: "API Integration",
                 body: "I ensured seamless integration with the National Parks API to provide up-to-date information and streamline content updates."
             },
             {   
                 icon: "controller",
+                dimensions: { x: 34, y: 22 },
                 title: "Gamification",
                 body: "I designed an engaging memory-matching game that incorporated iconic images of the Grand Canyon, adding an element of fun and interactivity."
             }
@@ -81,22 +87,32 @@ const grandCanyon: CaseStudy = {
         text: [
             {
                 icon: "barGraph",
+                dimensions: { x: 34, y: 40 },
                 title: "Increased Traffic",
                 body: "The website traffic increased by 25% within the first month of launch, indicating a heightened interest in the park."
             },
             {
+                icon: "double",
+                dimensions: { x: 36, y: 15 },
                 title: "Deeper Engagement",
                 body: "Average session duration doubled, suggesting that visitors spent more time exploring the website's content."
             },
             {
+                icon: "smiley",
+                dimensions: { x: 33, y: 33 },
                 title: "Positive Feedback",
                 body: "The website received overwhelmingly positive feedback from users, with many praising its visual appeal, user-friendliness, and interactive features."
             }
         ],
         images: [
             {
+                src: gcTabletWeatherM,
+                alt: "Grand Canyon Tablet Weather Mockup"
+            },
+            {
                 src: gcPixelHeroM,
-                alt: "Grand Canyon Pixel Book Hero Mockup"
+                alt: "Grand Canyon Pixel Book Hero Mockup",
+                span: "span 2"
             },
             {
                 src: gcPixelGameM,
@@ -106,10 +122,6 @@ const grandCanyon: CaseStudy = {
                 src: gcTabletInfoM,
                 alt: "Grand Canyon Tablet Info Mockup"
             },
-            {
-                src: gcTabletWeatherM,
-                alt: "Grand Canyon Tablet Weather Mockup"
-            }
         ]
     }
 }

@@ -20,6 +20,7 @@ import michMacMonitorM from "$lib/img/case-study/michelangelo/mockup/macMonitorM
 const michelangelo: CaseStudy = {
     slug: 'michelangelo',
     home: {
+        color: 'var(--lite)',
         title: 'Immersive Renaissance Experience',
         subTitle: 'Through the works of Michelangelo',
         lottie: Creation
@@ -38,15 +39,19 @@ const michelangelo: CaseStudy = {
         text: [
             {
                 icon: "palette",
+                dimensions: { x: 36, y: 35 },
                 title: "Immersion in Michelangelo's World",
                 body: "I delved deep into Michelangelo's artistic journey, studying his techniques, inspirations, and the cultural context of his era. This approach allowed me to create an authentic and informative experience for visitors."
             },
             {
+                icon: "interactive",
+                dimensions: { x: 10, y: 35 },
                 title: "Interactive Design Concepts",
                 body: "I explored various interactive design concepts, including virtual tours, 3D models of sculptures, and augmented reality elements. After careful consideration, I opted for a minimalist design aesthetic to ensure Michelangelo's works remained the focal point."
             },
             {
                 icon: "ticketCart",
+                dimensions: { x: 37, y: 39 },
                 title: "Streamlined Shopping Experience",
                 body: "To simplify the user experience, I combined the ticketing and merchandise carts into one, making it easy for visitors to purchase tickets and souvenirs in a single transaction."
             }
@@ -74,15 +79,19 @@ const michelangelo: CaseStudy = {
         text: [
         {
             icon: "barGraph",
+            dimensions: { x: 34, y: 40 },
             title: "Ticket Sales Skyrocketed",
             body: "Ticket sales increased by over 400% in the first two weeks alone."
         },
         {
+            icon: "sparkle",
+            dimensions: { x: 30, y: 30 },
             title: "Engaging Features",
             body: `The exhibit's interactive features, such as the immersive "walk-through" of the Sistine Chapel, garnered widespread acclaim and significantly increased user engagement.`
         },
         {
             icon: "coins",
+            dimensions: { x: 31, y: 32 },
             title: "Revenue Generation",
             body: "The integrated merchandise store drove a substantial increase in revenue for the museum, further validating the project's effectiveness."
         }

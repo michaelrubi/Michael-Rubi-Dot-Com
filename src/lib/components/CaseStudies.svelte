@@ -1,4 +1,3 @@
-<!-- CaseStudies.svelte -->
 <script lang="ts">
 import CSCard from "./CSCard.svelte";
 import { caseStudies, type CaseStudy} from "$lib/caseStudies";
@@ -16,13 +15,3 @@ const studies: CaseStudy[] = caseStudies
         </div>
     </div>
 </section>
-
-
-<style>
-    #projects .cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
-        gap: 2rem;
-    }
-
-</style>

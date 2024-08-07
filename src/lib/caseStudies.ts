@@ -1,4 +1,5 @@
 // caseStudies.ts
+export type Dimensions = {x: number, y: number};
 export type Icons =
 	"palette"
 	| "ticketCart"
@@ -6,10 +7,20 @@ export type Icons =
 	| "dice"
 	| "controller"
 	| "shirt"
-    | "coins";
+    | "coins"
+	| "interactive"
+	| "sparkle"
+	| "guitar"
+	| "bulb"
+	| "link"
+	| "weather"
+	| "smiley"
+	| "double";
 export type CaseStudy = {
 	slug: string;
 	home: {
+		color?: string;
+		bg?: string;
 		title: string;
 		subTitle: string;
 		lottie: object;
@@ -25,6 +36,7 @@ export type CaseStudy = {
 	process: {
 		text: {
 			icon?: Icons;
+			dimensions?: Dimensions;
 			title: string;
 			body: string;
 		}[];
@@ -36,12 +48,14 @@ export type CaseStudy = {
 	results: {
 		text: {
 			icon?: Icons;
+			dimensions?: Dimensions;
 			title: string;
 			body: string;
 		}[];
 		images: {
 			src: string;
 			alt: string;
+			span?: string;
 		}[];
 	};
 };
