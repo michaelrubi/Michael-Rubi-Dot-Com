@@ -431,6 +431,14 @@ footer span {
     display: none;
 }
 
+.legal {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
 @media (max-width: 730px) {
 
     footer .content {
@@ -458,6 +466,10 @@ footer span {
 
     footer span {
         display: block;
+    }
+
+    .legal {
+        flex-direction: column;
     }
 
 }
@@ -643,7 +655,7 @@ footer span {
     position: absolute;
     top: 2rem;
     top: clamp(0.75rem, 0.4635rem + 0.5961vw, 1rem);
-    left: clamp(3.3125rem, -0.4122rem + 7.7496vw, 6.5625rem);
+    /* left: clamp(3.3125rem, -0.4122rem + 7.7496vw, 6.5625rem); */
     background-color: var(--bg-hero);
     padding: clamp(0.75rem, 0.4635rem + 0.5961vw, 1rem);
     color: var(--txt-hero);

@@ -39,5 +39,11 @@ const links = [
         {/each}
       </ul>
     </div>
+	<div class="legal">
+		<small>&copy; {new Date().getFullYear()} Michael Rubi. All rights reserved.</small>
+		<small><a href="/terms" target="_blank">Terms and Conditions</a></small>
+		<small><a href="/privacy" target="_blank">Privacy Policy</a></small>
+	</div>
   </div>
+
 </footer>
