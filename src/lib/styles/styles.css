@@ -595,22 +595,41 @@ footer span {
     }
 }
 
-#projects .cards {
+#projects .cards,
+#studies .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
     gap: 2rem;
 }
 
-#projects .card {
+@media (width > 635px) {
+    #projects .cards {
+        grid-template-columns: repeat(2, minmax(288px, 1fr));
+    }
+}
+
+@media (width > 960px) {
+    #projects .cards {
+        grid-template-columns: repeat(3, minmax(288px, 1fr));
+    }
+}
+
+#projects .card,
+#studies .card {
     cursor: pointer;
     text-decoration: none;
     color: var(--txt-clr);
     display: grid;
 }
 
-#projects .animation {
+#projects .animation,
+#studies .animation {
     width: 100%;
     aspect-ratio: 1/1;
+}
+
+#projects img {
+    max-width: 100%;
 }
 
 .btn {
@@ -647,11 +666,13 @@ footer span {
     min-width: clamp(1rem, 100%, 2rem);
 }
 
-#csHero {
+#csHero,
+#projectHero {
     position: relative;
 }
 
-#csHero .text {
+#csHero .text,
+#projectHero .text {
     position: absolute;
     top: 2rem;
     top: clamp(0.75rem, 0.4635rem + 0.5961vw, 1rem);
@@ -661,22 +682,27 @@ footer span {
     color: var(--txt-hero);
 }
 
-#csHero h1 {
+#csHero h1,
+#projectHero h1 {
     transform: translateX(-2px);
     line-height: .8;
 }
 
-#csHero span {
+#csHero span,
+#projectHero span {
     font: var(--txt-cs-span);
 }
 
-#csHero img {
+#csHero img,
+#projectHero img {
     width: clamp(288px, 100%, 1440px);
     height: 100%;
 }
 
 @media (max-width: 768px) {
-    #csHero .text {
+
+    #csHero .text,
+    #projectHero .text {
         position: static;
         padding: clamp(0.25rem, 0.0121rem + 1.0152vw, 0.5rem) clamp(0.5rem, 0.0241rem + 2.0305vw, 1rem);
     }
@@ -687,7 +713,7 @@ article h2 {
     gap: .5rem;
 }
 
-article section:not(#csHero) {
+article section:not(#csHero, #projectHero) {
     padding-block: 1rem;
 }
 
@@ -701,18 +727,24 @@ h2::after {
 
 .bgProblem .wrapper,
 .process-cards,
-.results-cards {
+.results-cards,
+.projectDetails .wrapper,
+.lesson-cards,
+.challenge-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
     gap: 2rem;
 }
 
 .process,
-.result {
+.result,
+.challenge,
+.lesson {
     margin-block: 1rem;
 }
 
-.processes .wrapper {
+.processes .wrapper,
+.challenges .wrapper {
     container-type: inline-size;
     container-name: processes;
 }
@@ -831,4 +863,19 @@ article p {
 
 .navigation span {
     opacity: .25;
+}
+
+.projectDetails ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.projectDetails li {
+    margin-bottom: 1rem;
+    font: var(--txt-p);
+}
+
+.projectDetails a {
+    color: var(--primary);
 }

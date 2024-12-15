@@ -7,8 +7,14 @@ export class Project {
     description: string;
   };
   media: {
-    featuredImage: string;
-    featuredImageAlt: string;
+    featuredImage: {
+      src: string;
+      alt: string;
+    };
+    images: {
+      src: string;
+      alt: string;
+    }[];
   };
   tech: {
     technologies: string[];
@@ -22,8 +28,14 @@ export class Project {
     role?: string;
   };
   reflections?: {
-    challenges?: string;
-    lessonsLearned?: string;
+    challenges?: {
+      title: string;
+      description: string;
+    }[];
+    lessons?: {
+      title: string;
+      description: string;
+    }[];
   };
 
   constructor(
@@ -34,8 +46,14 @@ export class Project {
       description: string;
     },
     media: {
-      featuredImage: string;
-      featuredImageAlt: string;
+      featuredImage: {
+        src: string;
+        alt: string;
+      };
+      images: {
+        src: string;
+        alt: string;
+      }[];
     },
     tech: {
       technologies: string[];
@@ -49,8 +67,14 @@ export class Project {
       role?: string;
     },
     reflections?: {
-      challenges?: string;
-      lessonsLearned?: string;
+      challenges?: {
+        title: string;
+        description: string;
+      }[];
+      lessons?: {
+        title: string;
+        description: string;
+      }[];
     }
   ) {
     this.metadata = metadata;
