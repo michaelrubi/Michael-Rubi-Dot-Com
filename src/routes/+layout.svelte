@@ -1,25 +1,27 @@
+<!-- src/routes/+layout.svelte -->
 <script lang="ts">
-    import logo from '$lib/img/logo/logo.svg';
-    import Nav from '$lib/components/Nav.svelte';
-    import Footer from '$lib/components/Footer.svelte';
-    import { currentTheme } from '$lib/index.svelte';
-    // import '../app.css';
-    import '$lib/styles/styles.css';
+  import logo from "$lib/img/logo/logo.svg";
+  import Nav from "$lib/components/Nav.svelte";
+  import Footer from "$lib/components/Footer.svelte";
+  import { currentTheme } from "$lib/index.svelte";
+  // import '../app.css';
+  import "$lib/styles/styles.css";
 
+  $effect(() => {
+    document.body.className = currentTheme.dark ? "dark" : "light";
+  });
 
-    $effect(() => {
-        document.body.className = currentTheme.dark ? 'dark' : 'light';
-    })
-
-    const { children } = $props();
-
+  const { children } = $props();
 </script>
 
 <svelte:head>
-    <title>Michael Rubi</title>
-    <meta name="author" content="Michael Rubi">
-    <meta name="description" content="Michael Rubi is a web developer available for hire!">
-    <link rel="icon" type="image/svg+xml" href={logo} />
+  <title>Michael Rubi</title>
+  <meta name="author" content="Michael Rubi" />
+  <meta
+    name="description"
+    content="Michael Rubi is a web developer available for hire!"
+  />
+  <link rel="icon" type="image/svg+xml" href={logo} />
 </svelte:head>
 
 <Nav />
