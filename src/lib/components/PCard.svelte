@@ -17,3 +17,9 @@
   <span>{subTitle}</span>
   <span class="btn">view project</span>
 </a>
+
+<style>
+  img {
+    margin-bottom: 0.25rem;
+  }
+</style>

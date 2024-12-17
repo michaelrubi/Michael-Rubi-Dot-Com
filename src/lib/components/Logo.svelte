@@ -1,22 +1,23 @@
 <script lang="ts">
-let mobile = $state(false);
-const { fill } = $props();
+  let mobile = $state(false);
+  const { fill } = $props();
 
-const mobileBreakpoint = 768;
+  const mobileBreakpoint = 510;
 
-function checkWindowWidth() {
-	mobile = window.innerWidth < mobileBreakpoint;
-}
+  function checkWindowWidth() {
+    mobile = window.innerWidth < mobileBreakpoint;
+  }
 
-$effect(() => {
-	checkWindowWidth();
-	window.addEventListener("resize", checkWindowWidth);
+  $effect(() => {
+    checkWindowWidth();
+    window.addEventListener("resize", checkWindowWidth);
 
-	return () => {
-		window.removeEventListener("resize", checkWindowWidth);
-	};
-});
+    return () => {
+      window.removeEventListener("resize", checkWindowWidth);
+    };
+  });
 </script>
+
 {#if fill == "solid"}
   {#if mobile}
     <svg
@@ -113,14 +114,15 @@ $effect(() => {
       fill="url(#logo_grad)"
     />
     <defs>
-      <linearGradient id="logo_grad"
+      <linearGradient
+        id="logo_grad"
         x1="55.4509"
         y1="0"
         x2="55.4509"
         y2="48"
         gradientUnits="userSpaceOnUse"
       >
-        <stop class="stop-reg"  />
+        <stop class="stop-reg" />
         <stop class="stop-more" offset="0.66" />
       </linearGradient>
     </defs>

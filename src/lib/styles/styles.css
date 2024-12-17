@@ -272,7 +272,7 @@ nav ul li a {
     text-transform: uppercase;
 }
 
-@media (max-width: 510px) {
+@media (max-width: 857px) {
 
     .wrapper {
         flex-wrap: wrap;
