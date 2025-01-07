@@ -6,7 +6,7 @@
   const studies: CaseStudy[] = caseStudies;
 </script>
 
-<TransSection newId="studies">
+<TransSection id="studies">
   <h2>Case Studies</h2>
   <div class="cards">
     {#each studies as study}

@@ -5,7 +5,7 @@
   import TransSection from "./TransSection.svelte";
 </script>
 
-<TransSection newId="projects">
+<TransSection id="projects">
   <h2>Projects</h2>
   <div class="cards">
     {#each projects as project}

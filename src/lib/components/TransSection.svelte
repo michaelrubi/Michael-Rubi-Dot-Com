@@ -1,23 +1,21 @@
 <!-- src/lib/components/TransSection.svelte -->
 <script lang="ts">
+  import type { Snippet } from "svelte";
   import { fly } from "svelte/transition";
   type Spacer = { height: number; width: number };
   let section: HTMLElement;
   let inView = $state(false);
 
   type Props = {
-    newClass?: string;
-    newId?: string;
     placeholder?: Spacer;
-    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-    children: () => any;
+    children: Snippet;
+    [newKey: string]: any;
   };
 
-  const {
-    newId,
-    newClass,
-    children,
+  let {
     placeholder = { height: 600, width: 100 },
+    children,
+    ...rest
   }: Props = $props();
 
   $effect(() => {
@@ -41,7 +39,7 @@
   });
 </script>
 
-<section id={newId} class={newClass} bind:this={section}>
+<section {...rest} bind:this={section}>
   {#if inView}
     <div
       class="wrapper"

@@ -1,49 +1,50 @@
 <script lang="ts">
-import Logo from "$lib/components/Logo.svelte";
-import Link from "$lib/components/Link.svelte";
+  import Logo from "$lib/components/Logo.svelte";
+  import Link from "$lib/components/Link.svelte";
 
-import { page } from "$app/stores";
+  import { page } from "$app/stores";
 
-function linkRoute(link: string) {
-  return $page.url.pathname === '/' ? `${link}` : `/${link}`;
-}
+  function linkRoute(link: string) {
+    return $page.url.pathname === "/" ? `${link}` : `/${link}`;
+  }
 
-const links = [
-	{
-		icon: "email",
-		text: "rubi.webdeb@gmail.com",
-		url: "mailto:rubi.webdeb@gmail.com",
-	},
-	{
-		icon: "linkedin",
-		text: "michaelrubi",
-		url: "https://www.linkedin.com/in/michaelrubi/",
-	},
-	{
-		icon: "github",
-		text: "michaelrubi",
-		url: "https://github.com/michaelrubi",
-	},
-];
+  const links = [
+    {
+      icon: "email",
+      text: "rubi.webdeb@gmail.com",
+      url: "mailto:rubi.webdeb@gmail.com",
+    },
+    {
+      icon: "linkedin",
+      text: "michaelrubi",
+      url: "https://www.linkedin.com/in/michaelrubi/",
+    },
+    {
+      icon: "github",
+      text: "michaelrubi",
+      url: "https://github.com/michaelrubi",
+    },
+  ];
 </script>
-
 
 <footer>
   <div class="wrapper">
     <div class="content">
-      <a href={linkRoute('#')}><Logo fill="gradient" /></a>
-      <span><a href={linkRoute('#projects')}>Case Studies</a></span>
+      <a href={linkRoute("#")}><Logo fill="gradient" /></a>
+      <span><a href={linkRoute("#projects")}>Projects</a></span>
+      <span><a href={linkRoute("#studies")}>Case Studies</a></span>
       <ul>
         {#each links as link}
-          <Link {...link}/>
+          <Link {...link} />
         {/each}
       </ul>
     </div>
-	<div class="legal">
-		<small>&copy; {new Date().getFullYear()} Michael Rubi. All rights reserved.</small>
-		<small><a href="/terms" target="_blank">Terms and Conditions</a></small>
-		<small><a href="/privacy" target="_blank">Privacy Policy</a></small>
-	</div>
+    <div class="legal">
+      <small
+        >&copy; {new Date().getFullYear()} Michael Rubi. All rights reserved.</small
+      >
+      <small><a href="/terms" target="_blank">Terms and Conditions</a></small>
+      <small><a href="/privacy" target="_blank">Privacy Policy</a></small>
+    </div>
   </div>
-
 </footer>
